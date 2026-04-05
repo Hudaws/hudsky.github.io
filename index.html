@@ -1,1 +1,756 @@
-<h1>My Portofolio</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Design Portfolio - Welcome to my awesome website!!!">
+  <meta name="keywords" content="design, portfolio, graphic design, cool, awesome">
+  <title>~*~ .:My Design Portfolio:. ~*~ WELCOME!! ~*~</title>
+  <style>
+    @keyframes twinkle { 0%{opacity:0.5} 100%{opacity:1} }
+    @keyframes rainbow {
+      0%   { color:#ff0000; text-shadow:2px 2px 0 #ff00ff,0 0 20px #ff0000; }
+      16%  { color:#ff9900; text-shadow:2px 2px 0 #ffff00,0 0 20px #ff9900; }
+      33%  { color:#ffff00; text-shadow:2px 2px 0 #00ff00,0 0 20px #ffff00; }
+      50%  { color:#00ff00; text-shadow:2px 2px 0 #00ffff,0 0 20px #00ff00; }
+      66%  { color:#00ffff; text-shadow:2px 2px 0 #0000ff,0 0 20px #00ffff; }
+      83%  { color:#ff00ff; text-shadow:2px 2px 0 #ff0000,0 0 20px #ff00ff; }
+      100% { color:#ff0000; text-shadow:2px 2px 0 #ff00ff,0 0 20px #ff0000; }
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes bounce { from{transform:translateY(0)} to{transform:translateY(-8px)} }
+    @keyframes shimmer { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+    @keyframes bgShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+    @keyframes musicProgress { 0%{width:0%} 100%{width:100%} }
+    @keyframes fadeOut {
+      0%{opacity:1;transform:scale(1) rotate(0deg)}
+      100%{opacity:0;transform:scale(0.3) rotate(180deg) translateY(-20px)}
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background-color: #000033;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23003366' opacity='0.6'/%3E%3Ccircle cx='22' cy='22' r='1' fill='%23003366' opacity='0.6'/%3E%3C/svg%3E");
+      color: #ffffff;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 12px;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpolygon points='0,0 0,20 5,15 8,22 11,21 8,14 14,14' fill='%23ff00ff' stroke='white' stroke-width='1'/%3E%3C/svg%3E") 0 0, auto;
+    }
+
+    /* Starfield */
+    body::before {
+      content:'';
+      position:fixed; inset:0;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(1px 1px at 45% 70%, white, transparent),
+        radial-gradient(1px 1px at 20% 80%, white, transparent),
+        radial-gradient(1px 1px at 65% 40%, white, transparent),
+        radial-gradient(1px 1px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 35% 25%, white, transparent),
+        radial-gradient(1px 1px at 55% 90%, white, transparent),
+        radial-gradient(1px 1px at 75% 75%, white, transparent),
+        radial-gradient(1px 1px at 5% 50%, white, transparent),
+        radial-gradient(2px 2px at 30% 35%, rgba(255,255,0,0.9), transparent),
+        radial-gradient(2px 2px at 70% 20%, rgba(255,255,0,0.9), transparent),
+        radial-gradient(2px 2px at 15% 65%, rgba(200,200,255,0.8), transparent);
+      pointer-events:none;
+      z-index:0;
+      animation:twinkle 3s ease-in-out infinite alternate;
+    }
+
+    /* Cursor trail */
+    .star-trail {
+      position:fixed;
+      pointer-events:none;
+      z-index:9999;
+      font-size:14px;
+      animation:fadeOut 0.8s forwards;
+    }
+
+    /* TOP MARQUEE BAR */
+    #top-banner {
+      position:relative; z-index:10;
+      background:linear-gradient(180deg,#000066,#cc00cc,#000066);
+      border-bottom:3px solid #ff00ff;
+      padding:4px 0;
+    }
+    #top-banner marquee { color:#ffff00; font-size:11px; font-weight:bold; }
+
+    /* MAIN WRAPPER */
+    #main-wrapper {
+      position:relative; z-index:10;
+      width:800px;
+      margin:10px auto;
+      border:2px solid #9900ff;
+      background:rgba(0,0,40,0.92);
+      box-shadow:0 0 30px #ff00ff, 0 0 60px #6600cc;
+    }
+
+    /* SITE HEADER */
+    #site-header {
+      background:linear-gradient(135deg,#000066,#330066,#660033,#000066);
+      background-size:400% 400%;
+      animation:bgShift 6s ease infinite;
+      padding:20px 15px 15px;
+      text-align:center;
+      border-bottom:3px dashed #ff00ff;
+    }
+
+    .site-title {
+      font-family:'Comic Sans MS',cursive;
+      font-size:36px;
+      font-weight:bold;
+      display:block;
+      margin-bottom:6px;
+      animation:rainbow 2s linear infinite;
+    }
+    .site-subtitle {
+      font-family:'Comic Sans MS',cursive;
+      font-size:14px;
+      color:#00ffff;
+    }
+    .blink { animation:blink 1s step-end infinite; }
+    .spin { display:inline-block; animation:spin 2s linear infinite; }
+    .bounce-g { display:inline-block; animation:bounce 0.5s ease-in-out infinite alternate; }
+
+    /* NAV */
+    #nav-bar {
+      background:linear-gradient(180deg,#6600cc,#330066);
+      padding:7px;
+      text-align:center;
+      border-bottom:2px solid #ff00ff;
+    }
+    .nav-btn {
+      display:inline-block;
+      margin:2px 3px;
+      padding:5px 14px;
+      background:linear-gradient(180deg,#9933ff,#6600cc);
+      border:2px outset #cc66ff;
+      color:#ffff00;
+      font-family:'Comic Sans MS',cursive;
+      font-size:11px;
+      font-weight:bold;
+      text-decoration:none;
+      text-transform:uppercase;
+      cursor:pointer;
+    }
+    .nav-btn:hover { background:linear-gradient(180deg,#ff00ff,#cc00cc); border-style:inset; color:#fff; }
+
+    /* TWO-COLUMN */
+    #body-row { display:flex; align-items:flex-start; }
+
+    /* SIDEBAR */
+    #sidebar {
+      width:185px; min-width:185px;
+      border-right:2px solid #6600cc;
+      padding:10px;
+      background:rgba(0,0,60,0.5);
+    }
+    .sbox {
+      border:2px inset #9933ff;
+      background:linear-gradient(180deg,#000066,#000033);
+      padding:8px;
+      margin-bottom:10px;
+    }
+    .sbox-title {
+      font-family:'Comic Sans MS',cursive;
+      font-size:11px; font-weight:bold;
+      color:#ffff00; text-align:center;
+      border-bottom:1px dashed #ff00ff;
+      padding-bottom:4px; margin-bottom:6px;
+    }
+    .slink { display:block; color:#00ffff; font-size:11px; text-decoration:none; padding:2px 0; }
+    .slink:hover { color:#ff00ff; text-decoration:underline; }
+
+    #visitor-counter {
+      font-family:'Courier New',monospace;
+      font-size:22px; font-weight:bold;
+      color:#00ff00; text-align:center;
+      background:#000; border:2px inset #333;
+      padding:4px 8px; letter-spacing:4px;
+      text-shadow:0 0 8px #00ff00;
+    }
+    .now-playing { font-size:10px; color:#ccccff; line-height:1.7; }
+    .np-song { color:#ffff00; font-weight:bold; animation:blink 2s infinite; }
+    .music-bar-bg { background:#000; height:7px; border:1px inset #333; margin-top:4px; }
+    .music-bar-fill { height:100%; background:linear-gradient(90deg,#00ff00,#ffff00); animation:musicProgress 20s linear infinite; }
+
+    .web-badge {
+      display:inline-block;
+      width:88px; height:31px;
+      border:1px solid #555;
+      margin:2px; font-size:7px; font-weight:bold;
+      text-align:center; line-height:31px;
+      vertical-align:middle;
+    }
+
+    /* MAIN CONTENT */
+    #main-content { flex:1; padding:12px; }
+
+    .section-header {
+      background:linear-gradient(90deg,#9900ff,#cc00cc,#9900ff);
+      background-size:200% auto;
+      animation:shimmer 2s linear infinite;
+      padding:5px 12px;
+      font-family:'Comic Sans MS',cursive;
+      font-size:14px; font-weight:bold;
+      color:#ffff00; border:2px outset #cc66ff;
+      margin-bottom:8px; text-shadow:1px 1px 0 #000;
+    }
+
+    .content-box {
+      border:2px inset #9933ff;
+      background:rgba(0,0,100,0.4);
+      padding:10px; margin-bottom:12px;
+      font-size:11px; line-height:1.8;
+      color:#ccccff;
+    }
+    .content-box p { margin-bottom:6px; }
+    .content-box b { color:#ff00ff; }
+    .hl { color:#ffff00; font-weight:bold; }
+
+    /* Under construction */
+    .under-con {
+      background:repeating-linear-gradient(45deg,#000,#000 10px,#ffcc00 10px,#ffcc00 20px);
+      padding:7px; text-align:center;
+      font-family:'Comic Sans MS',cursive;
+      font-size:12px; font-weight:bold; color:#000;
+      margin:8px 0;
+    }
+
+    /* Skill bars */
+    .bar-bg { background:#000; border:1px inset #333; height:11px; }
+    .bar-fill { height:100%; background:linear-gradient(90deg,#9900ff,#ff00ff); }
+
+    /* Gallery */
+    .gallery-outer { width:100%; border-collapse:separate; border-spacing:6px; }
+    .gcell {
+      background:rgba(0,0,80,0.7);
+      border:2px outset #6600cc;
+      padding:6px; text-align:center;
+      vertical-align:top; width:50%;
+    }
+    .gcell:hover { border-style:inset; background:rgba(100,0,100,0.3); }
+    .gcell img {
+      width:100%; max-width:270px;
+      border:3px solid #ff00ff; display:block;
+      margin:0 auto 5px;
+      transition:all 0.2s;
+      cursor:pointer;
+    }
+    .gcell img:hover { border-color:#00ffff; transform:scale(1.04); box-shadow:0 0 18px #ff00ff; }
+    .gcell .gtitle { font-family:'Comic Sans MS',cursive; font-size:11px; font-weight:bold; color:#ffff00; }
+    .gcell .gdesc { font-size:10px; color:#9999ff; margin-top:3px; }
+
+    .placeholder-cell {
+      height:180px; width:100%;
+      background:rgba(0,0,40,0.7);
+      border:2px dashed #220044;
+      display:flex; align-items:center; justify-content:center;
+      color:#220066; font-family:'Comic Sans MS',cursive;
+      font-size:11px; text-align:center;
+    }
+
+    /* Guestbook */
+    .retro-input {
+      background:#000033; border:2px inset #6600cc;
+      color:#00ff00; font-family:'Courier New',monospace;
+      font-size:11px; padding:3px 6px;
+      width:100%; margin-bottom:5px;
+    }
+    .retro-input:focus { outline:none; border-color:#ff00ff; box-shadow:0 0 5px #ff00ff; }
+    .retro-btn {
+      background:linear-gradient(180deg,#9933ff,#6600cc);
+      border:2px outset #cc66ff;
+      color:#ffff00; font-family:'Comic Sans MS',cursive;
+      font-size:11px; font-weight:bold;
+      padding:4px 16px; cursor:pointer;
+    }
+    .retro-btn:hover { background:linear-gradient(180deg,#ff00ff,#cc00cc); }
+    .retro-btn:active { border-style:inset; }
+
+    /* Skill badges */
+    .skill-badge {
+      background:linear-gradient(180deg,#3300cc,#1a0066);
+      border:1px outset #6633ff;
+      color:#ccffff; font-size:9px; font-weight:bold;
+      padding:2px 8px; text-transform:uppercase; letter-spacing:1px;
+      display:inline-block;
+    }
+
+    /* FOOTER */
+    #site-footer {
+      border-top:2px dashed #9900ff;
+      background:rgba(0,0,40,0.9);
+      padding:10px; text-align:center;
+      font-size:10px; color:#6666cc;
+    }
+
+    /* WELCOME POPUP — Windows XP style */
+    #welcome-popup {
+      position:fixed; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      z-index:8000; width:380px;
+      border:3px outset #9933ff;
+      box-shadow:4px 4px 0 #000, 0 0 30px #ff00ff;
+    }
+    .popup-tb {
+      background:linear-gradient(90deg,#000080,#1084d0);
+      padding:4px 8px;
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:11px; font-weight:bold; color:#fff;
+      font-family:Tahoma,sans-serif;
+    }
+    .popup-tb-x {
+      display:inline-block;
+      width:16px; height:14px;
+      background:linear-gradient(180deg,#d4d0c8,#a8a090);
+      border:1px outset #fff;
+      font-size:9px; text-align:center;
+      line-height:14px; color:#000; cursor:pointer;
+    }
+    .popup-body {
+      background:#ece9d8; padding:16px;
+      text-align:center; color:#000;
+      font-family:Tahoma,sans-serif; font-size:12px;
+    }
+    .popup-body .pi { font-size:36px; margin-bottom:8px; display:block; }
+    .popup-body p { margin-bottom:12px; color:#000033; line-height:1.6; }
+    .popup-ok {
+      background:linear-gradient(180deg,#d4d0c8,#a8a090);
+      border:2px outset #fff; padding:4px 24px;
+      font-family:Tahoma,sans-serif; font-size:11px; cursor:pointer;
+    }
+    .popup-ok:active { border-style:inset; }
+
+    /* LIGHTBOX */
+    #lightbox {
+      display:none; position:fixed; inset:0;
+      background:rgba(0,0,0,0.92);
+      z-index:9000; text-align:center;
+      padding-top:60px;
+    }
+    #lightbox img {
+      max-width:90vw; max-height:80vh;
+      border:4px solid #ff00ff;
+      box-shadow:0 0 40px #ff00ff;
+    }
+    #lb-close {
+      position:absolute; top:20px; right:30px;
+      color:#ff00ff; font-size:28px;
+      font-weight:bold; cursor:pointer;
+      font-family:'Comic Sans MS',cursive;
+    }
+    #lb-close:hover { color:#ffff00; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width:14px; }
+    ::-webkit-scrollbar-track { background:#000033; }
+    ::-webkit-scrollbar-thumb { background:linear-gradient(180deg,#9933ff,#6600cc); border:1px solid #cc66ff; }
+    ::-webkit-scrollbar-thumb:hover { background:linear-gradient(180deg,#ff00ff,#cc00cc); }
+  </style>
+</head>
+<body>
+
+<!-- WELCOME POPUP -->
+<div id="welcome-popup">
+  <div class="popup-tb">
+    <span>🌟 Welcome to my website!!</span>
+    <span class="popup-tb-x" onclick="document.getElementById('welcome-popup').style.display='none'">✕</span>
+  </div>
+  <div class="popup-body">
+    <span class="pi">🎉</span>
+    <p><b>SELAMAT DATANG di website saya!!!</b><br><br>
+    Kamu adalah pengunjung spesial hari ini!<br>
+    Website ini <b>BEST VIEWED</b> dengan<br>
+    Internet Explorer 6.0 resolusi 800×600 😂<br><br>
+    <i>Please sign my guestbook before you leave!!</i></p>
+    <button class="popup-ok" onclick="document.getElementById('welcome-popup').style.display='none'">OK &gt;&gt;</button>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLB()">
+  <div id="lb-close" onclick="closeLB()">[ X ] CLOSE</div>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- TOP BANNER -->
+<div id="top-banner">
+  <marquee behavior="scroll" direction="left" scrollamount="3">
+    &nbsp;&nbsp;★ SELAMAT DATANG DI WEBSITE SAYA ★ &nbsp;&nbsp;
+    ✨ BEST VIEWED IN 800×600 ✨ &nbsp;&nbsp;
+    🎨 GRAPHIC DESIGN IS MY PASSION 🎨 &nbsp;&nbsp;
+    ⭐ NO HOTLINKING PLEASE ⭐ &nbsp;&nbsp;
+    💜 PLEASE SIGN MY GUESTBOOK 💜 &nbsp;&nbsp;
+    🌟 EST. 2025 🌟 &nbsp;&nbsp;
+    ★ TERIMA KASIH SUDAH BERKUNJUNG ★ &nbsp;&nbsp;&nbsp;
+  </marquee>
+</div>
+
+<!-- MAIN WRAPPER -->
+<div id="main-wrapper">
+
+  <!-- HEADER -->
+  <div id="site-header">
+    <span class="spin">★</span>
+    <span class="bounce-g">💻</span>
+    <span class="site-title">~*~ My Design Portfolio ~*~</span>
+    <span class="bounce-g">🎨</span>
+    <span class="spin">★</span>
+    <br>
+    <span class="site-subtitle">:: Welcome to My Creative Space!! ::</span>
+    <br>
+    <small style="color:#9999ff; font-family:'Comic Sans MS',cursive; font-size:10px;">
+      [ You are visitor #<span id="counter-h">001330</span> ] &nbsp;|&nbsp; Last updated: March 2026
+    </small>
+  </div>
+
+  <!-- NAV -->
+  <div id="nav-bar">
+    <a href="#home" class="nav-btn">🏠 Home</a>
+    <a href="#about" class="nav-btn">👤 About Me</a>
+    <a href="#portfolio" class="nav-btn">🎨 My Work</a>
+    <a href="#skills" class="nav-btn">⚡ Skills</a>
+    <a href="#guestbook" class="nav-btn">✏️ Guestbook</a>
+    <a href="#links" class="nav-btn">🔗 Links</a>
+  </div>
+
+  <!-- BODY ROW -->
+  <div id="body-row">
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+      <div class="sbox">
+        <div class="sbox-title">👀 VISITORS</div>
+        <div id="visitor-counter">001330</div>
+        <div style="text-align:center;font-size:9px;color:#6666cc;margin-top:3px;">since Jan 2025</div>
+      </div>
+
+      <div class="sbox">
+        <div class="sbox-title">🌸 ABOUT ME</div>
+        <div style="font-size:10px;color:#ccccff;line-height:1.8;">
+          <b style="color:#ff00ff;">Name:</b> Designer<br>
+          <b style="color:#ff00ff;">City:</b> Indonesia 🇮🇩<br>
+          <b style="color:#ff00ff;">Hobby:</b> Design!!<br>
+          <b style="color:#ff00ff;">Fave:</b> Graphic Art<br>
+          <b style="color:#ff00ff;">Status:</b> <span style="color:#00ff00;animation:blink 1s infinite;display:inline-block;">✅ Open!</span>
+        </div>
+      </div>
+
+      <div class="sbox">
+        <div class="sbox-title">🎵 NOW PLAYING</div>
+        <div class="now-playing">
+          <div class="np-song" id="song-disp">♪ Linkin Park - Numb</div>
+          <div class="music-bar-bg"><div class="music-bar-fill" style="width:60%;"></div></div>
+          <div style="margin-top:4px;font-size:9px;color:#6666cc;">[ ▶ ⏸ ⏹ ⏭ ]</div>
+        </div>
+      </div>
+
+      <div class="sbox">
+        <div class="sbox-title">🔗 QUICK LINKS</div>
+        <a href="#portfolio" class="slink">→ Lihat karya saya</a>
+        <a href="#about" class="slink">→ About me</a>
+        <a href="#guestbook" class="slink">→ Sign guestbook!</a>
+        <a href="mailto:email@kamu.com" class="slink">→ Email me</a>
+      </div>
+
+      <div class="sbox">
+        <div class="sbox-title">😊 MY MOOD TODAY</div>
+        <div style="text-align:center;font-size:28px;" id="mood-e">🎨</div>
+        <div style="text-align:center;font-size:10px;color:#ff00ff;font-style:italic;">"inspired!!"</div>
+      </div>
+
+      <div style="text-align:center;margin-top:6px;">
+        <div class="web-badge" style="background:linear-gradient(180deg,#000080,#0000cc);color:#fff;font-family:Arial,sans-serif;font-size:7px;line-height:1.3;padding:3px;">
+          BEST VIEWED<br>IE 6.0
+        </div>
+        <div class="web-badge" style="background:#000;color:#00ff00;font-family:'Courier New';font-size:8px;">HTML 4.01</div>
+        <div class="web-badge" style="background:linear-gradient(45deg,#ff0000,#ff7700,#ffff00,#00ff00,#0000ff,#8b00ff);color:#fff;font-size:7px;text-shadow:1px 1px #000;">★ PRIDE ★</div>
+        <div class="web-badge" style="background:linear-gradient(180deg,#ff9900,#ff6600);color:#fff;font-family:Arial,sans-serif;font-size:7px;line-height:1.3;padding:2px;">MADE WITH<br>❤️ LOVE</div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content">
+
+      <a name="home"></a>
+      <div class="section-header">★ WELCOME TO MY WORLD ★</div>
+
+      <marquee behavior="scroll" direction="left" scrollamount="2" style="color:#00ffff;font-size:11px;border-top:1px solid #6600cc;border-bottom:1px solid #6600cc;padding:3px 0;background:rgba(0,0,50,0.5);margin-bottom:8px;">
+        💫 Graphic Design &nbsp;|&nbsp; 🎨 Poster Art &nbsp;|&nbsp; ✨ Visual Storytelling &nbsp;|&nbsp; 💜 Creative Work &nbsp;|&nbsp; 🌟 Open for Collab &nbsp;|&nbsp; 💻 Based in Indonesia
+      </marquee>
+
+      <div class="content-box">
+        <p><span class="bounce-g" style="font-size:16px;">👋</span> <b>HEYY!! Selamat datang di website portofolio desain saya!!</b></p>
+        <p>Di sini kamu bisa lihat semua karya desain yang pernah saya buat. Saya adalah seorang <b>graphic designer</b> yang <span class="hl">SUPER PASSIONATE</span> dengan dunia visual dan seni digital!! 🎨✨</p>
+        <p>Jangan lupa <b style="color:#00ffff;">sign my guestbook</b> ya sebelum pergi!! Dan kalau mau kolaborasi, langsung aja hubungi saya~</p>
+        <p><small style="color:#6666cc;">[ Note: Website ini masih dalam pengembangan. Maaf kalau ada yang belum sempurna!! 🙏 ]</small></p>
+      </div>
+
+      <div class="under-con">🚧 &nbsp; WEBSITE UNDER CONSTRUCTION - MORE COMING SOON!! &nbsp; 🚧</div>
+
+      <!-- ABOUT -->
+      <a name="about"></a>
+      <div class="section-header" style="margin-top:14px;">★ ABOUT ME ★</div>
+      <div class="content-box">
+        <p><b>Halo!!</b> Saya adalah seorang desainer grafis dari Indonesia yang suka banget bikin poster, konten sosmed, dan segala hal yang berbau visual. Desain buat saya bukan cuma kerjaan, tapi <span class="hl">PASSION</span>!! 💜</p>
+        <p>Saya mulai mendesain sejak lama dan terus berkembang sampai sekarang. Setiap project adalah petualangan baru yang seru!! 🌟</p>
+        <table cellpadding="3" style="font-size:10px;width:100%;margin-top:6px;">
+          <tr>
+            <td style="color:#ff00ff;width:38%;"><b>Lokasi:</b></td>
+            <td style="color:#ccccff;">Indonesia 🇮🇩</td>
+          </tr>
+          <tr>
+            <td style="color:#ff00ff;"><b>Spesialisasi:</b></td>
+            <td style="color:#ccccff;">Poster, Branding, Social Media</td>
+          </tr>
+          <tr>
+            <td style="color:#ff00ff;"><b>Software:</b></td>
+            <td style="color:#ccccff;">Photoshop, Illustrator, Canva, Figma</td>
+          </tr>
+          <tr>
+            <td style="color:#ff00ff;"><b>Status:</b></td>
+            <td style="color:#00ff00;"><b class="blink">✅ Open for work!!</b></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- SKILLS -->
+      <a name="skills"></a>
+      <div class="section-header" style="margin-top:14px;">★ MY SKILLS ★</div>
+      <div class="content-box">
+        <p><b style="color:#00ffff;">Tools:</b></p>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;">
+          <span class="skill-badge">Photoshop</span>
+          <span class="skill-badge">Illustrator</span>
+          <span class="skill-badge">Canva</span>
+          <span class="skill-badge">Figma</span>
+          <span class="skill-badge">CorelDraw</span>
+          <span class="skill-badge">Poster Design</span>
+          <span class="skill-badge">Typography</span>
+          <span class="skill-badge">Branding</span>
+        </div>
+        <p><b style="color:#00ffff;">Skill Level:</b></p>
+        <table cellpadding="3" style="width:100%;font-size:10px;margin-top:4px;">
+          <tr>
+            <td style="color:#ffff00;width:110px;">Photoshop</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width:85%;"></div></div></td>
+            <td style="color:#ff00ff;width:35px;text-align:right;">85%</td>
+          </tr>
+          <tr>
+            <td style="color:#ffff00;">Illustrator</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width:75%;"></div></div></td>
+            <td style="color:#ff00ff;text-align:right;">75%</td>
+          </tr>
+          <tr>
+            <td style="color:#ffff00;">Canva</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width:95%;"></div></div></td>
+            <td style="color:#ff00ff;text-align:right;">95%</td>
+          </tr>
+          <tr>
+            <td style="color:#ffff00;">Typography</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width:80%;"></div></div></td>
+            <td style="color:#ff00ff;text-align:right;">80%</td>
+          </tr>
+          <tr>
+            <td style="color:#ffff00;">Color Theory</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width:88%;"></div></div></td>
+            <td style="color:#ff00ff;text-align:right;">88%</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- PORTFOLIO -->
+      <a name="portfolio"></a>
+      <div class="section-header" style="margin-top:14px;">★ MY WORK — GALLERY ★</div>
+      <div class="content-box" style="padding:6px;">
+        <p style="text-align:center;font-size:10px;color:#00ffff;margin-bottom:8px;">
+          [ Klik gambar untuk melihat lebih besar!! ] &nbsp; ✨
+        </p>
+        <table class="gallery-outer">
+          <tr>
+            <td class="gcell">
+              <img src="Poster_Gadjah_Lampung_Berbagi.png"
+                   alt="Social Open Donation - Gadjah Lampung"
+                   onclick="openLB('Poster_Gadjah_Lampung_Berbagi.png')" />
+              <div class="gtitle">★ Social Open Donation ★</div>
+              <div class="gdesc">Gadjah Lampung Berbagi | 2026</div>
+              <div class="gdesc" style="color:#ff00ff;">[ Poster · Campaign · Event ]</div>
+            </td>
+            <td class="gcell">
+              <div class="placeholder-cell">
+                [ Karya selanjutnya<br>segera hadir!! 🚧 ]
+              </div>
+              <div class="gtitle" style="color:#220066;">Coming Soon...</div>
+              <div class="gdesc" style="color:#220066;">Stay tuned!!</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="gcell">
+              <div class="placeholder-cell">
+                [ Upload karya kamu<br>di sini!! 🎨 ]
+              </div>
+              <div class="gtitle" style="color:#220066;">Coming Soon...</div>
+            </td>
+            <td class="gcell">
+              <div class="placeholder-cell">
+                [ More work<br>coming soon!! ✨ ]
+              </div>
+              <div class="gtitle" style="color:#220066;">Coming Soon...</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- GUESTBOOK -->
+      <a name="guestbook"></a>
+      <div class="section-header" style="margin-top:14px;">★ GUESTBOOK — SIGN IN!! ★</div>
+      <div class="content-box">
+        <p style="margin-bottom:8px;">Tinggalkan pesan ya!! Saya pasti baca semuanya~~ 💜</p>
+        <input type="text" class="retro-input" placeholder="Nama kamu..." id="gb-name" />
+        <input type="email" class="retro-input" placeholder="Email (optional)..." id="gb-email" />
+        <textarea class="retro-input" rows="3" placeholder="Tulis pesan di sini... ^^" id="gb-msg" style="resize:none;"></textarea>
+        <div style="text-align:right;margin-bottom:10px;">
+          <button class="retro-btn" onclick="submitGB()">SEND MESSAGE &gt;&gt;</button>
+        </div>
+        <div id="gb-reply" style="display:none;padding:8px;border:1px dashed #00ff00;color:#00ff00;font-size:11px;font-family:'Comic Sans MS',cursive;"></div>
+
+        <div style="margin-top:12px;border-top:1px dashed #330066;padding-top:8px;">
+          <div style="font-size:10px;color:#9999ff;font-weight:bold;margin-bottom:6px;">[ Recent Entries ]</div>
+          <div>
+            <span style="color:#ffff00;font-size:10px;font-weight:bold;">★ Auryn:</span>
+            <span style="color:#ccccff;font-size:10px;"> "Kerennn banget designnya!! Keep it up ya!! 🎉"</span>
+            <span style="color:#6666cc;font-size:9px;"> - 2026.03.01</span>
+          </div>
+          <div style="margin-top:4px;">
+            <span style="color:#ffff00;font-size:10px;font-weight:bold;">★ Irham:</span>
+            <span style="color:#ccccff;font-size:10px;"> "Mantap!! Website bagus bro, desainnya top!! 💜"</span>
+            <span style="color:#6666cc;font-size:9px;"> - 2026.02.28</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LINKS -->
+      <a name="links"></a>
+      <div class="section-header" style="margin-top:14px;">★ MY SOCIAL LINKS ★</div>
+      <div class="content-box">
+        <table cellpadding="4" style="font-size:11px;width:100%;">
+          <tr>
+            <td style="color:#ff00ff;width:30%;">📷 Instagram:</td>
+            <td><a href="#" style="color:#00ffff;">@username</a></td>
+          </tr>
+          <tr>
+            <td style="color:#ff00ff;">📘 Facebook:</td>
+            <td><a href="#" style="color:#00ffff;">Nama Kamu</a></td>
+          </tr>
+          <tr>
+            <td style="color:#ff00ff;">✉️ Email:</td>
+            <td><a href="mailto:email@kamu.com" style="color:#00ffff;">email@kamu.com</a></td>
+          </tr>
+          <tr>
+            <td style="color:#ff00ff;">💼 Behance:</td>
+            <td><a href="#" style="color:#00ffff;">behance.net/username</a></td>
+          </tr>
+        </table>
+      </div>
+
+    </div><!-- /main-content -->
+  </div><!-- /body-row -->
+
+  <!-- FOOTER -->
+  <div id="site-footer">
+    <marquee behavior="scroll" direction="right" scrollamount="2" style="font-size:10px;color:#ff00ff;margin-bottom:6px;">
+      ♥ Thank you for visiting!! ♥ &nbsp; Please come back soon!! &nbsp; ♥ Sign my guestbook!! ♥
+    </marquee>
+    <div style="margin-bottom:6px;">
+      <div class="web-badge" style="background:#000080;color:#fff;font-family:Arial,sans-serif;font-size:7px;line-height:1.3;padding:2px;">MICROSOFT<br>INTERNET<br>EXPLORER</div>
+      <div class="web-badge" style="background:linear-gradient(180deg,#fff,#ccc);color:#cc0000;font-family:Arial,sans-serif;font-weight:bold;font-size:8px;">NO FRAMES!</div>
+      <div class="web-badge" style="background:#000;color:#00ff00;font-family:'Courier New';font-size:8px;">W3C HTML</div>
+    </div>
+    <div>© 2025-2026 My Design Portfolio | All Rights Reserved | No Hotlinking Please!!</div>
+    <div style="margin-top:4px;color:#330066;font-size:9px;">Best viewed with Internet Explorer 6.0 at 800×600 resolution</div>
+  </div>
+
+</div><!-- /main-wrapper -->
+
+<script>
+  // VISITOR COUNTER
+  let cnt = 1330;
+  function tickCounter() {
+    cnt++;
+    const s = String(cnt).padStart(6,'0');
+    document.getElementById('visitor-counter').textContent = s;
+    document.getElementById('counter-h').textContent = s;
+    if(cnt < 1337) setTimeout(tickCounter, 120);
+  }
+  setTimeout(tickCounter, 1000);
+
+  // CURSOR STAR TRAIL
+  const STARS = ['✨','⭐','💫','★','✦','🌟','💜','♥','·','•'];
+  let lastT = 0;
+  document.addEventListener('mousemove', function(e) {
+    const now = Date.now();
+    if(now - lastT < 80) return;
+    lastT = now;
+    const el = document.createElement('div');
+    el.className = 'star-trail';
+    el.textContent = STARS[Math.floor(Math.random() * STARS.length)];
+    el.style.left = (e.clientX + Math.random()*20-10) + 'px';
+    el.style.top  = (e.clientY + Math.random()*20-10) + 'px';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 800);
+  });
+
+  // LIGHTBOX
+  function openLB(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lightbox').style.display = 'block';
+  }
+  function closeLB() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeLB(); });
+
+  // GUESTBOOK
+  const REPLIES = [
+    "Makasih udah tanda tangan!! 💜 Nanti saya balas ya~",
+    "Waah terima kasih!! Seneng banget ada yang mampir!! ✨",
+    "Komennya bikin semangat!! Makasih ya!! 🌟",
+    "Yeayy!! Makasih udah mampir!! Jangan lupa balik lagi!! ⭐",
+  ];
+  function submitGB() {
+    const name = document.getElementById('gb-name').value || 'Anonymous';
+    const msg  = document.getElementById('gb-msg').value;
+    if(!msg) { alert('Tulis pesan dulu dong!! ^^'); return; }
+    const r = REPLIES[Math.floor(Math.random()*REPLIES.length)];
+    const el = document.getElementById('gb-reply');
+    el.innerHTML = '✨ Makasih <b>' + name + '</b>!! "' + msg + '" — ' + r;
+    el.style.display = 'block';
+    document.getElementById('gb-name').value = '';
+    document.getElementById('gb-email').value = '';
+    document.getElementById('gb-msg').value = '';
+  }
+
+
+  const MOODS = ['🎨','✨','💜','🌟','🖌️','💫','⭐','🎉','🔥','😍'];
+  let mi = 0;
+  setInterval(() => { mi=(mi+1)%MOODS.length; document.getElementById('mood-e').textContent=MOODS[mi]; }, 2000);
+
+
+  const SONGS = [
+    '♪ Linkin Park - Numb',
+    '♪ Evanescence - My Immortal',
+    '♪ Simple Plan - Perfect',
+    '♪ Green Day - Boulevard',
+    '♪ MCR - Welcome to...',
+    '♪ Avril Lavigne - Sk8er Boi',
+  ];
+  let si = 0;
+  setInterval(() => { si=(si+1)%SONGS.length; document.getElementById('song-disp').textContent=SONGS[si]; }, 8000);
+</script>
+</body>
+</html>
